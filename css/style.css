@@ -1,0 +1,353 @@
+/* Stylesheet für Selfhtml Design 06
+  responsives Layout mit Grid Layout */
+
+/* ====================================================  GLOBAL DEFINITION  ==================================================== */
+
+/* alternatives Boxmodell */
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 75em;
+  margin: 0 auto;
+  padding: 0 1em;
+  font: normal 1em Times New Roman serif;  /* Mindestschriftgröße wird dem Browser, bzw. dem Nutzer überlassen! */
+  color: #333; 
+  background-color: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+	
+}
+
+/* === Farben, Formen und Schriftgrößen === */
+h1, h2 {
+	margin: 0 0 1em;
+	color: #303030;	
+}
+	
+a { 
+	color: #09c; 
+	outline: none; 
+	text-decoration: underline dashed #09c;
+}
+a:hover,
+a:focus	{ 
+	color: #818181; 
+	background: skyblue;
+	text-decoration: none; 
+}
+
+a.more	{ 
+	float: right; 
+	font-weight: bold; 
+	padding: 0.3em 1em; 
+	color: midnightblue; 
+	text-decoration: none; 
+	background: url('../img/icon/arrow.png') no-repeat right; }
+a.more:hover,
+a.more:focus { 
+	color: #535353; 
+}
+
+main img {
+	width: 100%;
+}
+
+[alt=decoration]{
+	width: auto;
+}
+
+/* Durch class="button" kann jeder Link oder Button unseren eigenen Stil bekommen */
+button,
+.button {	
+	font: bold 1em Arial, Verdana, sans-serif;
+	border-radius: 1em;
+	text-decoration: none; 
+	color: black;
+	border:1px solid minbightblue;
+    box-shadow: inset 1px 1px 5px 0px,
+				inset 2px 2px 5px white, 
+	            inset -1px -1px 5px black;	
+	background:#09c linear-gradient(135deg, #09c 0%, skyblue 49%, #09c 100%);
+	margin:  4px 2px; 
+	padding: 4px 8px;	
+}
+
+button:hover, button:focus, button:active, 
+.button:hover,
+.button:active,
+.button:focus {
+	background:skyblue;
+	margin:  0px  2px; 
+	padding: 8px; 
+}
+
+
+/** CONTENT  - Layout **/
+header {
+	color:white;
+	background: #333;
+}
+
+#logo{
+	display:inline-block;
+	color:white;
+	padding: 1em;
+	font-size:150%;
+}
+
+/*  section.flexslider ist im eigenen flexslider.css definiert!  */
+
+main {
+  display: grid;
+  grid-gap: 0rem;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+}
+
+article,
+main > h1,
+#bar {
+	grid-column: 1 / -1;     /* nimmt volle Breite ein */	
+}
+
+article {
+	margin-top: 2em;	
+  	-webkit-column-count: 4;  
+  	-webkit-column-width: 20em; 
+  	columns: 4 20em;  
+  	-ms-hyphens: auto;
+  	-webkit-hyphens: auto;
+  	hyphens: auto;  
+}
+
+aside {
+	color:white;
+	background: #34383D;	
+	padding: 1em;
+}
+
+aside h2,aside section ul{color:white;}	
+
+section{
+	margin-bottom: 2em;
+	padding: 1em;
+}
+
+
+
+section#bar {
+	position:relative;	
+	background: #d2d2d1 linear-gradient(to bottom, #e8e7e5 0%,#d2d2d1 100%); 
+	margin-bottom:2em;
+	display: grid;
+	grid-template-columns: 1fr 25em;	
+}
+
+section#bar:before,
+section#bar:after{    
+    position:absolute;
+    bottom: -2em;
+    content: '';
+    background: url('../img/shadow.png') no-repeat top left;
+	background-size: cover; 	
+    width: 50%;
+    height: 2em;
+}
+
+#bar:before {
+	left: 0;
+}
+
+#bar:after{    
+	transform: scale(-1,1);
+	right:0;
+}
+
+#bar form {
+	float:right;
+	padding: 1em 0 0 2em;
+	text-aling: right;
+}
+
+img.resp {width:100%}
+
+
+
+ul.feature{
+}
+
+ul.feature li{
+	border-bottom: 2px dotted #616161;
+    color: #CCCCCC;
+    list-style: square;
+    padding: 15px 0 5px 15px;
+}
+
+p.tweet-box{
+	background: none repeat scroll 0 0 #000000;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 12px;
+}
+p.tweet-box span, p.tweet-box a {
+    color: #07B2E6;
+}
+
+/* =============== NAVIGATION ============= */
+
+nav#navigation{
+	float: right;
+    right: 3%;
+	top: 1em;
+}
+
+#navigation li {
+	display:inline;
+    list-style-type: none;	
+}
+
+#navigation a {
+    color: white;
+	font-size:1em;
+	font-weight: bold;
+	text-decoration: none;
+    text-transform: uppercase;
+    margin: .5em;
+	padding: 0.5em 1em;
+}
+
+#navigation li:hover a, 
+#navigation li:focus a, 
+#navigation li:active a {
+	background: #ccc linear-gradient(135deg, #aaa 0%, #fff 49%, #aaa 100%);
+	color: black;
+}
+
+a[aria-current=page]{
+	background: #ccc linear-gradient(135deg, #dfac20 0%, gold 49%, #dfac20 100%);
+	color: black;
+}
+
+
+footer {
+	margin-top: 2em;
+	padding:0;
+}
+
+/* Social Icons */
+#social {
+	display: inline;
+	list-style-type:none;
+}
+#social li {
+	float: left;
+	padding: 0;
+	margin: 0 0 0 .7em;
+}
+#social a {
+	text-indent: 100%;
+	background: url("../img/social.png") no-repeat scroll left top transparent;
+	display: block;
+	width: 37px;
+	height: 37px;
+	margin-top: 6px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#social a, #social a:hover {
+	transition: none;
+}	
+#social a.dribbble  {
+	background-position: 0px 0;
+}
+#social a.dot{
+	background-position: -40px 0;
+}
+#social a.plus {
+	background-position: -80px 0;
+}
+#social a.twitter {
+	background-position: -120px 0;
+}
+#social a.in{
+	background-position: -160px 0;
+}
+#social a.fb {
+	background-position: -200px 0;
+}
+#social a.dribbble:hover, #social a.dribbble:focus {
+	background-position: 0 -40px;
+}
+#social a.dot:hover, #social a.dot:focus {
+	background-position: -40px -40px;
+}
+#social a.plus:hover, #social a.plus:focus {
+	background-position: -80px -40px;
+}
+#social a.twitter:hover, #social a.twitter:focus {
+	background-position: -120px -40px;
+}
+#social a.in:hover, #social a.in:focus {
+	background-position: -160px -40px;
+}
+#social a.fb:hover, #social a.fb:focus {
+	background-position: -200px -40px;
+}
+
+footer p {
+	display:inline;
+	float:right;
+}
+
+@media only screen and (max-width: 1000px) {
+body{width:100%}	
+}
+/* 2-Spaltenlayout  */
+@media only screen and (max-width: 700px) {
+
+header a#navlink {
+	display:block;
+}
+
+article section, section.spalte {width:50%;}
+
+
+
+nav#navigation{
+	position:relative;
+	float:left;
+	clear:left; 
+	width:90%; 
+	padding:0; 
+	margin:0;
+}
+#navigation ul {
+	padding:0;
+	margin:2%;
+	top:0;
+	left:0%;
+	width:100%;
+	clear:left;
+}
+
+#navigation ul li a {
+	display:block;
+	background:#333;
+	width:90%;
+	padding: 20px 2%;
+	font-size:2em;
+	border-radius:5px;
+}
+			
+}
+
+/* 1-Spaltenlayout  */
+@media only screen and (max-width: 500px) {
+
+article section, section.spalte {width:100%;}
+}
