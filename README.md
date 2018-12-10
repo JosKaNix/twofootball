@@ -1,6 +1,6 @@
 Auf dieser Webseite wrd sowas ähnliches wie bei "Onefootball" 
-
+Basis der Website ist die dritte Vorlage
 ##Struktur
-|--> Schüler 1
-  |-- Website
-  |-- Snap-
+|--> Startseite
+  |-- Neueste News auf einen Blick
+  |-- 

@@ -351,3 +351,8 @@ nav#navigation{
 
 article section, section.spalte {width:100%;}
 }
+
+#header-image img{
+	width:20%;
+	float:right;
+}
