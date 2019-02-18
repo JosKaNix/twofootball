@@ -89,8 +89,8 @@ button:hover, button:focus, button:active,
 
 /** CONTENT  - Layout **/
 header {
-	color:white;
-	background: #333;
+	color: black;
+	background: black;
 }
 
 #logo{
@@ -355,4 +355,18 @@ article section, section.spalte {width:100%;}
 #header-image img{
 	width:20%;
 	float:right;
+}
+
+section {
+	border-color: green;
+	border-width: 5px;
+	border-style: solid;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+article {
+	border-color: green;
+	border-width: 5px;
+	border-style: solid;
+	background-color: rgba(255, 255, 255, 0.8);
 }
