@@ -16,6 +16,7 @@ body {
   font: normal 1em Times New Roman serif;  /* Mindestschriftgröße wird dem Browser, bzw. dem Nutzer überlassen! */
   color: #333; 
   background-color: #ffffff;
+  background-image: url('../img/twofootball.png')
 }
 
 * {
@@ -370,3 +371,4 @@ article {
 	border-style: solid;
 	background-color: rgba(255, 255, 255, 0.8);
 }
+	
